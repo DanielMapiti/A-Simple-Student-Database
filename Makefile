@@ -9,3 +9,10 @@ database.o: Database.cpp
 
 dbdriver.o: DbDriver.cpp
 	$(CC) DbDriver.cpp -c
+
+
+clean:
+	@rm -f *.o
+
+install:
+	@mv DB ~/bin
