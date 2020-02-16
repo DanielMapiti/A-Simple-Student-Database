@@ -5,6 +5,7 @@ void addStudent();
 void readDb();
 void saveDb();
 void dispStudentData();
-viod grade();
+void grade();
+void print();
 
 #endif
