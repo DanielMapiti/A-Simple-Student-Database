@@ -8,17 +8,18 @@ int main(){
     for(;;){
 
         cout<<"Enter a number (or q to quit) and press return...\n";
-        cout<<"1: Add Student\n2: Read Database\n3: Save Database\n4: Display Given Student Data\n5: Grade Student\nq: Quit\n";
+        cout<<"1: Add Student\n2: Save Database\n3: Read Database\n4: Display Given Student Data\n5: Grade Student\nq: Quit\n";
         cin>>choice;
 
         if(choice== 1){
             addStudent();
         } else if (choice==2)
         {
-            readDb();
+            saveDb();
         }else if (choice==3)
         {
-            saveDb();
+            readDb();
+            
         }else if (choice==4)
         {
             dispStudentData();
