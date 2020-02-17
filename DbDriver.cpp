@@ -8,7 +8,7 @@ int main(){
     for(;;){
 
         cout<<"Enter a number (or q to quit) and press return...\n";
-        cout<<"0: Add Student\n2: Read Database\n3: Save Database\n4: Display Given Student Data\n5: Grade Student\nq: Quit\n";
+        cout<<"1: Add Student\n2: Read Database\n3: Save Database\n4: Display Given Student Data\n5: Grade Student\nq: Quit\n";
         cin>>choice;
 
         if(choice== 1){
@@ -29,11 +29,8 @@ int main(){
         {
             break;
         }
-        
-        
-        
-        
-        
+
+ 
     }
     return 0;
 }
