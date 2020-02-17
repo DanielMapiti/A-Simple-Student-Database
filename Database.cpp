@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 using namespace std;
 
 struct StudentRecords{
@@ -31,9 +32,14 @@ void addStudent(){
 }
 void readDb(){
     print("readDb");
+    ofstream myfile;
+    myfile.open("RecordsFile.txt");
+    myfile<<recordList[0].name;
+    myfile.close();
 }
 void saveDb(){
     print("saveDb");
+
 }
 void dispStudentData(){
     print("dispStudentData");
