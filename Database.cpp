@@ -88,8 +88,22 @@ void dispStudentData(string target){
     
 
 }
-void grade(){
+void grade(string target){
     print("grade");
+    string line;
+    int tracker=0;
+    ifstream myfile ("RecordsFile.txt");
+    if(myfile.is_open()){
+        while (getline(myfile, line)){
+            if(target.compare(stnumber(line))==0){
+                cout<< line.length();
+                tracker++;
+                break;
+            }
+        }
+        if(tracker==0){cout<< "student "<<target<<" not found."<<endl;}
+        myfile.close();
+    }
 }
 
 string stnumber(string str){
@@ -100,4 +114,18 @@ string stnumber(string str){
     }
     return stno;
 
+}
+
+void Split(const std::string& subject, std::vector<std::string>& container) //stack overflow
+{
+  container.clear();
+  size_t len = subject.length() + 1;
+  char* s = new char[ len ];
+  memset(s, 0, len*sizeof(char));
+  memcpy(s, subject.c_str(), (len - 1)*sizeof(char));
+  for (char *p = strtok(s, " "); p != NULL; p = strtok(NULL, " "))
+  {
+    container.push_back( p );
+  }
+  delete[] s;
 }
