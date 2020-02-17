@@ -5,6 +5,7 @@ using namespace std;
 
 int main(){
     int choice;
+    string target;
     for(;;){
 
         cout<<"Enter a number (or q to quit) and press return...\n";
@@ -22,7 +23,10 @@ int main(){
             
         }else if (choice==4)
         {
-            dispStudentData();
+            cout<<"Enter the student number: \n";
+            cin>> target;
+            dispStudentData(target);
+            
         }else if (choice ==5)
         {
             grade();

@@ -63,10 +63,41 @@ void saveDb(){
 myfile.close();
 
 }
-void dispStudentData(){
+void dispStudentData(string target){
     print("dispStudentData");
+
+    string line;
+    int tracker=0;
+    ifstream myfile ("RecordsFile.txt");
+    if(myfile.is_open()){
+        while (getline(myfile, line)){
+            if(target.compare(stnumber(line))==0){
+                cout<<line<<endl;
+                tracker++;
+                break;
+            }
+        }
+        if(tracker==0){cout<< "student "<<target<<" not found."<<endl;}
+        myfile.close();
+    }
+    else{
+        cout<<"Unable to open file!\n";
+    }
+
+
+    
+
 }
 void grade(){
     print("grade");
 }
 
+string stnumber(string str){
+    istringstream ss(str);
+     string stno;
+    for(int i=0;i<3; i++){
+        ss>>stno;
+    }
+    return stno;
+
+}
