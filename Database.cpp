@@ -18,6 +18,9 @@ vector<StudentRecords> recordList;
 void print(string message){
     cout<<"function "<<message<<" called."<<endl;
 }
+
+
+
 StudentRecords student;
 void addStudent(){
     print("addStudent");
@@ -92,11 +95,24 @@ void grade(string target){
     print("grade");
     string line;
     int tracker=0;
+    int total=0;
+    int x=0;
+    int avg=0;
+    string bb;
+    vector<string> vv;
     ifstream myfile ("RecordsFile.txt");
     if(myfile.is_open()){
         while (getline(myfile, line)){
             if(target.compare(stnumber(line))==0){
-                cout<< line.length();
+                Split(line,vv);
+                for(int i=vv.size(); i>2;i--){
+                    bb=vv[i];
+                    stringstream toInt(bb);
+                    toInt>> x;
+                    total +=x;
+                }
+                avg = total/(vv.size()-3);
+                cout<< "The average for "<<target<<" is "<<avg<<endl;
                 tracker++;
                 break;
             }
@@ -116,7 +132,7 @@ string stnumber(string str){
 
 }
 
-void Split(const std::string& subject, std::vector<std::string>& container) //stack overflow
+void Split(const string& subject, vector<string>& container)
 {
   container.clear();
   size_t len = subject.length() + 1;
