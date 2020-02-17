@@ -1,6 +1,7 @@
 #include "DbHeader.h"
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 struct StudentRecords{
@@ -9,6 +10,8 @@ struct StudentRecords{
     string studentNumber;
     string classRecord;
 };
+
+vector<StudentRecords> recordList;
 
 void print(string message){
     cout<<"function "<<message<<" called."<<endl;
@@ -22,7 +25,9 @@ void addStudent(){
     cin>>student.surname;
     cin>>student.studentNumber;
     getline(cin, student.classRecord);
-    cout<<student.name<<endl;
+    recordList.push_back(student);
+    for(int i=0;i<recordList.size();i++){cout<<recordList[i].name<<endl;}
+    
 }
 void readDb(){
     print("readDb");
