@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 
+
+
 void addStudent();
 void readDb();
 void saveDb();
@@ -11,5 +13,7 @@ void grade(std::string target);
 void print();
 std::string stnumber(std::string str);
 void Split(const std::string& subject, std::vector<std::string>& container);
+//int numLine(std::string filename)
+
 
 #endif

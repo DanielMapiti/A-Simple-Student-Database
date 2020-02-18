@@ -5,13 +5,16 @@
 #include <fstream>
 #include <bits/stdc++.h>
 using namespace std;
+//using namespace MPTSAN003;
 
-struct StudentRecords{
+
+    struct StudentRecords{
     string name;
     string surname;
     string studentNumber;
     string classRecord;
 };
+
 
 vector<StudentRecords> recordList;
 
@@ -51,12 +54,35 @@ void readDb(){
     
 }
 void saveDb(){
+    string line;
     print("saveDb");
     ofstream myfile;
-    myfile.open("RecordsFile.txt");
+    int noLine=0; 
+    ifstream ff;
+    //vector<int>::iterator it;
+    ff.open("RecordsFile.txt");
+    if(ff.is_open()){
+          while (getline(ff, line))
+       {noLine++;}
+       for(int p=0;p<recordList.size();p++){
+        for(int k=0; k<noLine;k++){
+            getline(ff,line);
+            if(recordList[p].studentNumber.compare(stnumber(line))==0){
+                //it= recordList.begin();
+                recordList.erase(recordList.begin()+p);
+                
+
+            }
+
+        }
+    }
+    }else{cout<< "Unable to open file!\n";}ff.close();
+
+     
+      myfile.open("RecordsFile.txt", ios::app);
     if(myfile.is_open()){
     for(int i=0;i<recordList.size();i++){
-        myfile<<recordList[i].name<<" "<<recordList[i].surname<<" "<<recordList[i].classRecord<<endl;
+        myfile<<recordList[i].name<<" "<<recordList[i].surname<<" "<<recordList[i].studentNumber<<" "<<recordList[i].classRecord<<endl;
         }  
         recordList.clear();  
     }
@@ -145,3 +171,19 @@ void Split(const string& subject, vector<string>& container)
   }
   delete[] s;
 }
+
+//count the number of lines in a file
+/*
+int numLine(string filename){
+    
+    int count = 0;
+    string line;
+ 
+    ifstream file(filename);
+    while (getline(file, line))
+       {count++;}
+ 
+    file.close();
+    return count;
+
+}*/
