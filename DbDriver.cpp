@@ -8,10 +8,10 @@ int main(){
     int choice;
     string target;
     for(;;){
-        cout<<"+-------------------------------------------------------------------------------------------+\n\n\n";
+        cout<<"+------------------------------=------------------------------------------+\n";
         cout<<"Enter a number (or q to quit) and press return...\n";
         cout<<"1: Add Student\n2: Save Database\n3: Read Database\n4: Display Given Student Data\n5: Grade Student\nq: Quit\n";
-        cout<<"+--------------------------------------------------------------------------------------------\n\n";
+        cout<<"+-------------------------------------------------------------------------+\n";
         cin>>choice;
 
         if(choice== 1){
