@@ -5,7 +5,7 @@
 #include <fstream>
 #include <bits/stdc++.h>
 using namespace std;
-//using namespace MPTSAN003;
+using namespace MPTSAN003;
 
 
     struct StudentRecords{
@@ -17,18 +17,17 @@ using namespace std;
 
 
 vector<StudentRecords> recordList;
-
+/*
 void print(string message){
     cout<<"function "<<message<<" called."<<endl;
 }
-
+*/
 
 
 StudentRecords student;
-void addStudent(){
-    print("addStudent");
-    cout<<"Enter the student's details separated by space (name surname studentNumber classRecord): \n";
-    //StudentRecords student;
+/*Adds student records to a vector*/
+void MPTSAN003::addStudent(){
+    cout<<"Enter the student's details separated by space (name surname studentNumber(lowercase) classRecord): \n";
     cin>>student.name;
     cin>>student.surname;
     cin>>student.studentNumber;
@@ -37,8 +36,9 @@ void addStudent(){
     for(int i=0;i<recordList.size();i++){cout<<recordList[i].name<<endl;}
     
 }
-void readDb(){
-    print("readDb");
+
+/*Read all students records from the .txt file*/
+void MPTSAN003::readDb(){
     string line;
     ifstream myfile ("RecordsFile.txt");
     if(myfile.is_open()){
@@ -53,9 +53,9 @@ void readDb(){
 
     
 }
-void saveDb(){
+/*Saves all students records from vector to the .txt file*/
+void MPTSAN003::saveDb(){
     string line;
-    print("saveDb");
     ofstream myfile;
     int noLine=0; 
     ifstream ff;
@@ -92,8 +92,9 @@ void saveDb(){
 myfile.close();
 
 }
-void dispStudentData(string target){
-    print("dispStudentData");
+
+/*Displays student's details by student number */
+void MPTSAN003::dispStudentData(string target){
 
     string line;
     int tracker=0;
@@ -117,8 +118,9 @@ void dispStudentData(string target){
     
 
 }
-void grade(string target){
-    print("grade");
+
+/*Calculates the average of all grade and prints it out*/
+void MPTSAN003::grade(string target){
     string line;
     int tracker=0;
     int total=0;
@@ -148,7 +150,8 @@ void grade(string target){
     }
 }
 
-string stnumber(string str){
+/*Given a string of student records, it returns the student number*/
+string MPTSAN003::stnumber(string str){
     istringstream ss(str);
      string stno;
     for(int i=0;i<3; i++){
@@ -158,7 +161,8 @@ string stnumber(string str){
 
 }
 
-void Split(const string& subject, vector<string>& container)
+/*Splits a string by " " to a vector*/
+void MPTSAN003::Split(const string& subject, vector<string>& container)
 {
   container.clear();
   size_t len = subject.length() + 1;

@@ -4,15 +4,15 @@
 #include <vector>
 
 
-
+namespace MPTSAN003{
 void addStudent();
 void readDb();
 void saveDb();
 void dispStudentData(std::string target);
 void grade(std::string target);
-void print();
+//void print();
 std::string stnumber(std::string str);
-void Split(const std::string& subject, std::vector<std::string>& container);
+void Split(const std::string& subject, std::vector<std::string>& container);}
 //int numLine(std::string filename)
 
 

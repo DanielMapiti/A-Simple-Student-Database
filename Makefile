@@ -16,3 +16,6 @@ clean:
 
 install:
 	@mv DB ~/bin
+
+run:
+	./DB
