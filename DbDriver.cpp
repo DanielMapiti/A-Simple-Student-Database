@@ -8,7 +8,7 @@ int main(){
     int choice;
     string target;
     for(;;){
-        cout<<"+------------------------------=------------------------------------------+\n";
+        cout<<"+-------------------------------------------------------------------------+\n";
         cout<<"Enter a number (or q to quit) and press return...\n";
         cout<<"1: Add Student\n2: Save Database\n3: Read Database\n4: Display Given Student Data\n5: Grade Student\nq: Quit\n";
         cout<<"+-------------------------------------------------------------------------+\n";
@@ -25,13 +25,13 @@ int main(){
             
         }else if (choice==4)
         {
-            cout<<"Enter the student number: \n";
+            cout<<"Enter the student number(lowercase): \n";
             cin>> target;
             MPTSAN003::dispStudentData(target);
 
         }else if (choice ==5)
         {
-            cout<<"Enter the student number: \n";
+            cout<<"Enter the student number(lowercase): \n";
             cin>> target;
             MPTSAN003::grade(target);
         }else

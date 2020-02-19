@@ -33,8 +33,8 @@ void MPTSAN003::addStudent(){
     cin>>student.studentNumber;
     getline(cin, student.classRecord);
     recordList.push_back(student);
-    for(int i=0;i<recordList.size();i++){cout<<recordList[i].name<<endl;}
-    
+   // for(int i=0;i<recordList.size();i++){cout<<recordList[i].name<<endl;}
+    cout<<"Student(s) added.\n";
 }
 
 /*Read all students records from the .txt file*/
@@ -69,7 +69,8 @@ void MPTSAN003::saveDb(){
             getline(ff,line);
             if(recordList[p].studentNumber.compare(stnumber(line))==0){
                 //it= recordList.begin();
-                recordList.erase(recordList.begin()+p);
+                //recordList.erase(recordList.begin()+p);
+                cout<<"Duplicate detected!, The new data will replace the old!\n";
                 
 
             }
@@ -84,7 +85,8 @@ void MPTSAN003::saveDb(){
     for(int i=0;i<recordList.size();i++){
         myfile<<recordList[i].name<<" "<<recordList[i].surname<<" "<<recordList[i].studentNumber<<" "<<recordList[i].classRecord<<endl;
         }  
-        recordList.clear();  
+        recordList.clear();
+        cout<<"Data saved.\n";  
     }
     else{
         cout<< "Unable to open file!\n";
@@ -140,7 +142,7 @@ void MPTSAN003::grade(string target){
                     total +=x;
                 }
                 avg = total/(vv.size()-3);
-                cout<< "The average for "<<target<<" is "<<avg<<endl;
+                cout<< "The average for "<<target<<" is "<<avg<<"."<<endl;
                 tracker++;
                 break;
             }
